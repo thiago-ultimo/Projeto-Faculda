@@ -1,2 +1,2 @@
-# Projeto-Faculda
+# Projeto-Faculdade
  projeto gti 

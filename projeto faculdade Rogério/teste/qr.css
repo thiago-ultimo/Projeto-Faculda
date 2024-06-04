@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #142C4D;
+    justify-content: center;
+}
+
+.container {
+    width: 300px; /* ajustando a largura */
+    background: whitesmoke;
+    border-radius: 7px;
+    padding: 16px 25px;
+    transition: height 0.5s ease;
+    text-align: center; /* centralizando o conteúdo */
+}
+
+.container.active {
+    height: 530px;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 10px; /* adicionando espaço abaixo do título */
+}
+
+header p {
+    color: #474747;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.container .form {
+    padding: 20px 0 25px;
+}
+
+.container :where(input, button) {
+    width: 200px; /* ajustando a largura */
+    height: 45px; /* ajustando a altura */
+    border: none;
+    outline: none;
+    border-radius: 7px;
+}
+
+.form input {
+    padding: 0 17px;
+    font-size: 18px;
+    border: 1px solid #999;
+    margin-bottom: 10px; /* espaço entre o input e o botão */
+}
+
+.form button {
+    color: #fff;
+    background: rgb(27, 2, 59);
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.form button:hover {
+    background: #33035f;
+}
+.container.qr-code{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 33px 0;
+    pointer-events: none;
+}
+
+
+.qr-code.img{
+    width: 220px; ;
+    height: auto;
+    display: none;
+}
+.container.container.active{
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.5s ease;
+}

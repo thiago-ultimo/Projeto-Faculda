@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteirinha Digital</title>
+    <link rel="stylesheet" href="est.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #142C4D;
+            margin: 5px;
+        }
+
+        .card {
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: white;
+            text-align: center;
+        }
+
+        .card-header {
+            background-color: #142c4def;
+            color: white;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            margin: 10px 0 5px;
+            font-size: 22px;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .card-body {
+            padding: 25px;
+            text-align: auto;
+        }
+
+        .card-body p {
+            margin: 5px 0;
+        }
+
+        .card-footer {
+            background-color: #c9c2c2;
+            padding: 10px;
+            font-size: 14px;
+            color: #1d1c1c;
+        }
+
+        .qr-code {
+            display: block;
+            margin: 10px auto 0;
+            width: 100px;
+            height: 100px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #142c4def;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obter os dados de cadastro do localStorage
+            const dadosCadastro = JSON.parse(localStorage.getItem('dadosCadastro'));
+
+            if (dadosCadastro) {
+                // Atualizar a página com os dados do usuário
+                document.getElementById('profile-pic').src = dadosCadastro.foto || 'imagens/default-profile.png';
+                document.getElementById('name').textContent = dadosCadastro.nome || 'Nome não informado';
+                document.getElementById('id').textContent = `ID: ${dadosCadastro.ra}`;
+                document.getElementById('curso').textContent = `Curso: ${dadosCadastro.curso || 'Curso não informado'}`;
+                document.getElementById('universidade').textContent = `Universidade: ${dadosCadastro.universidade || 'Universidade não informada'}`;
+                document.getElementById('validade').textContent = `Válido até: ${dadosCadastro.validade || 'Data não informada'}`;
+                document.getElementById('qr-code').src = dadosCadastro.qrCode || 'imagens/default-qr.png';
+            } else {
+                alert("Nenhum dado de cadastro encontrado.");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="foto">
+        <img src="imagens/iultimo.jpg" alt="">
+    </div>
+    <div class="card">
+        <div class="card-header">
+            
+            <h2 id="name" class="name">Ultimo</h2>
+            <p class="title">Estudante de TI</p>
+        </div>
+        <div class="card-body">
+            <p id="id"><strong>ID:</strong> 377865886</p>
+            <p id="curso"><strong>Curso:</strong>Gestão em TI</p>
+            <p id="universidade"><strong>Universidade:</strong> Universidade de Guarulhos</p>
+            <img id="qr-code" src="imagens/My_Instagram_QR_Code (1).png" alt="QR Code" class="qr-code">
+        </div>
+        <div class="card-footer">
+            <p id="validade">Válido até: 02/2025</p>
+        </div>
+    </div>
+    <button class="btn" onclick="window.location.href='principal1.html'">Voltar</button>
+
+</body>
+</html>

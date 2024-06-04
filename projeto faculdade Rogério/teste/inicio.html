@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="est1.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #142C4D;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #foto {
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        form:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            align-self: flex-start;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #b0c4de;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #002a57;
+        }
+        p {
+            margin-top: 20px;
+            color: #FFFFFF;
+        }
+        a {
+            color: #FFD700;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+
+            // Obter os valores de RA e senha do formulário
+            const RA = document.getElementById('RA').value;
+            const senha = document.getElementById('Senha').value;
+
+            // Obter os dados de cadastro do localStorage
+            const dadosCadastro = JSON.parse(localStorage.getItem('dadosCadastro'));
+
+            // Validar o login
+            if (dadosCadastro && dadosCadastro.ra === RA && dadosCadastro.senha === senha) {
+                //alert("Login realizado com sucesso!");
+                window.location.href = "teste4.html"; // Redirecionar para a página principal
+            } else {
+                alert("RA ou senha incorretos.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="foto">
+        <img src="imagens/qrp.png" alt="Logotipo da empresa">
+    </div>
+    <h1>Login</h1>
+    <form onsubmit="handleLogin(event)">
+        <label for="RA">RA:</label>
+        <input type="text" id="RA" name="RA" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="Senha" name="senha" required>
+        <input type="submit" value="Login">
+    </form>
+    <p>Não tem Login? <a href="cadastro1.html">Faça um cadastro <strong>agora mesmo</strong></a></p>
+</body>
+</html>

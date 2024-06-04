@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Qr-code</title>
+    <link rel="stylesheet" href="qr.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #142C4D;
+            color: #201e1e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+        }
+
+        footer.qr-code {
+            margin-top: 20px;
+        }
+
+        footer.qr-code img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .back-btn {
+            background-color: #007BFF;
+            color: rgb(39, 35, 35);
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #002a57;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Seu acesso está pronto</h1>
+        </header>
+        <footer class="qr-code">
+            <img src="imagens/qrcodeacesso1.png" alt="gerar acesso">
+        </footer>
+        <button class="back-btn" onclick="goBack()">Voltar</button>
+    </div>
+    <script>
+        function goBack() {
+            // Redirecionar para a tela teste4
+            window.location.href = 'principal1.html';
+        }
+    </script>
+</body>
+</html>

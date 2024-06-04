@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Code Interface</title>
+    <link rel="stylesheet" href="est1.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #142C4D;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #foto {
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #0d2546;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 10px 4px #0d2546;
+            width: 90%;
+            max-width: 400px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card img {
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logout-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #002a57;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .card {
+                flex: 1 0 45%;
+                margin: 15px;
+            }
+        }
+    </style>
+    <script>
+       /* function logout() {
+            // Redirecionar para a página de login
+            window.location.href = 'inicio.html';*/
+            
+    function goToAcesso() {
+        window.location.href = 'acesso.html';
+    }
+
+    function logout() {
+        window.location.href = 'inicio.html';
+    }
+</script>
+
+        
+    </script>
+</head>
+<body>
+    <div id="foto">
+        <img src="imagens/qrp.png" alt="">
+    </div>
+    <header>
+        <h1>C-Code Interface</h1>
+    </header>
+    <div class="container">
+        <a href="acesso.html" class="card">
+            <img src="imagens/qrp.png" alt="QR Code">
+            <p>QR-CODE</p>
+        </a>
+        <a href="carteirinha1.html" class="card">
+            <img src="imagens/cel1.png" alt="Carteirinha Digital">
+            <p>Carteirinha Estudantil</p>
+        </a>
+    </div>
+    <button class="logout-btn" onclick="logout()">Sair</button>
+</body>
+</html>

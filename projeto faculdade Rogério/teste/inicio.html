@@ -80,14 +80,14 @@
         function handleLogin(event) {
             event.preventDefault();
 
-            // Obter os valores de RA e senha do formulário
+            
             const RA = document.getElementById('RA').value;
             const senha = document.getElementById('Senha').value;
 
-            // Obter os dados de cadastro do localStorage
+            
             const dadosCadastro = JSON.parse(localStorage.getItem('dadosCadastro'));
 
-            // Validar o login
+            
             if (dadosCadastro && dadosCadastro.ra === RA && dadosCadastro.senha === senha) {
                 //alert("Login realizado com sucesso!");
                 window.location.href = "teste4.html"; // Redirecionar para a página principal
